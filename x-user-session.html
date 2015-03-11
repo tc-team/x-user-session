@@ -1,0 +1,70 @@
+<!--
+    @license
+    Copyright (c) 2014 The Polymer Project Authors. All rights reserved.
+    This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+    The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+    The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+    Code distributed by Google as part of the polymer project is also
+    subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../core-ajax/core-ajax.html">
+
+<!--
+Element for defind session stat
+
+##### Example
+
+    <x-user-session sessionState="{{isSession}}" sessionService="http://localhost/session"></x-user-session>
+
+@element x-user-session
+@blurb Element for defind session stat
+@status alpha
+@homepage https://github.com/tc-team/x-user-session
+-->
+<polymer-element name="x-user-session" attributes="sessionState sessionService">
+    <template>
+        <core-ajax id="ajax"
+            auto
+            url="{{sessionService}}"
+            method="GET"
+            handleAs="json"
+            withCredentials="true"
+            on-core-response="{{handleResponse}}">
+        </core-ajax>
+    </template>
+    <script>
+        Polymer({
+            /**
+            * The `sessionService` attribute sets URL for session service
+            *
+            * @attribute sessionService
+            * @type string
+            * @default ''
+            */
+            sessionService: '',
+
+            /**
+            * The `sessionState` attribute sets a flag that indicates that session is active or not
+            *
+            * @attribute logged
+            * @type bool
+            * @default false
+            */
+            sessionState: false,
+
+            handleResponse: function (event, res) {      
+                if (res.response) {
+                    this.sessionState = true;
+                } else {
+                    this.sessionState = false;
+                    var hash = window.location.hash;
+                    var res = hash.match(/login\/.*/gi);
+                    if (res === null) {
+                        window.location.hash = '/login';
+                    }
+                }
+            }     
+        });
+    </script>
+</polymer-element>
