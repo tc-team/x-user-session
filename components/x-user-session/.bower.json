@@ -1,0 +1,38 @@
+{
+  "name": "x-user-session",
+  "authors": [
+    "TC"
+  ],
+  "description": "Element providing solution for session",
+  "keywords": [
+    "web-component",
+    "web-components",
+    "polymer",
+    "menu",
+    "session"
+  ],
+  "main": "x-user-session.html",
+  "license": "MIT",
+  "homepage": "https://github.com/tc-team/x-user-session/",
+  "ignore": [
+    "/.*",
+    "/tests/"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^0.5.4",
+    "core-ajax": "Polymer/core-ajax#~0.5.5"
+  },
+  "devDependencies": {
+    "web-component-tester": "*"
+  },
+  "_release": "49410c9edd",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "49410c9edd8be7a9bef5926fab90704baadc6612"
+  },
+  "_source": "git://github.com/tc-team/x-user-session.git",
+  "_target": "master",
+  "_originalSource": "tc-team/x-user-session",
+  "_direct": true
+}

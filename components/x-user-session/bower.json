@@ -1,0 +1,29 @@
+{
+  "name": "x-user-session",
+  "version": "0.0.0",
+  "authors": [
+    "TC"
+  ],
+  "description": "Element providing solution for session",
+  "keywords": [
+    "web-component",
+    "web-components",
+    "polymer",
+    "menu",
+    "session"
+  ],
+  "main": "x-user-session.html",
+  "license": "MIT",
+  "homepage": "https://github.com/tc-team/x-user-session/",
+  "ignore": [
+    "/.*",
+    "/tests/"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^0.5.4",
+    "core-ajax": "Polymer/core-ajax#~0.5.5"
+  },
+  "devDependencies": {
+    "web-component-tester": "*"
+  }
+}

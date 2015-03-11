@@ -1,0 +1,7 @@
+{
+  "name": "x-user-session#gh-pages",
+  "private": true,
+  "dependencies": {
+    "x-user-session": "tc-team/x-user-session#master"
+  }
+}
